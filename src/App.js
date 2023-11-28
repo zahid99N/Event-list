@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Title from './component/Title';
+import EventList from './component/EventList';
+import { useState } from 'react';
+import NewEventForm from './component/NewEventForm'
 
 function App() {
+  const [showEvents, setShowEvents]= useState(false)
+
+
+  const name = 'Jahid Kamal'
+
+ 
+  const handleEvents = () => {
+    setShowEvents(true)
+  }
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title name={name} />
+      <div className="events-buttons">
+        <div>
+          <button onClick={handleEvents}>Show Events</button>
+          <button onClick={() => { setShowEvents(false) }}>Hide Events</button>
+          <button>Add new Events</button>
+        </div> 
+      </div>
+      
+      {showEvents && <EventList />}
+      
+      <NewEventForm addEvent={addEvent} />
     </div>
   );
 }

@@ -1,0 +1,15 @@
+.title{
+    width: 500px;
+    background: #abdbe3;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    border: none;
+    border-radius: 8px;
+}
+.title h1{
+    font-family: serif;
+    font-weight: 400;
+    padding: 10px;
+    text-align: center;
+}
